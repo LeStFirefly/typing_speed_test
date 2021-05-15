@@ -1,20 +1,31 @@
 import React, {Component} from 'react';
 import {Button} from 'reactstrap';
+import { connect } from 'react-redux';
+import { loadText } from '../../actions';
+import HOC from '../HOC/';
 
 import './TypingTestBlock.sass'
 
 class TypingTestBlock extends Component {
-    typingText = `Ribeye duis pig, ham hock ut quis enim landjaeger ea excepteur jowl jerky exercitation beef.  Labore flank pork belly occaecat tri-tip sint.  Boudin capicola laborum, 
-    leberkas kielbasa mollit qui turkey ut ea ribeye rump sint tongue.  In prosciutto cillum laborum porchetta biltong ullamco drumstick ea ut excepteur pork loin meatball.  
-    Cillum officia tenderloin shoulder, flank prosciutto bresaola eu beef ribs nisi sunt proident dolor.","Fatback short loin chislic proident ball tip tongue deserunt brisket landjaeger tempor.  
-    Short ribs proident adipisicing officia turducken ex.`
+    componentDidMount() {
+        this.updateText();
+    }
 
+    updateText = () => {
+        const {TypeService, loadText} = this.props;
+
+        TypeService.getText()
+            .then(res => loadText(res))
+            .catch( () => loadText('Невозможно получить данные от сервера...'))
+    }
 
     render() {
+        const {text} = this.props;
+
         return(
             <div className="card typingTestBlock">
                 <div className="card-body">
-                    <div className='card textContent'>{this.typingText}</div>
+                    <div className='card textContent'>{text}</div>
                     <div className='resultPanel'>
                         <span><i className="bi bi-clock-history"></i>Скорость</span>
                         <span className='resultSpan'>200 зн./с</span>
@@ -28,4 +39,15 @@ class TypingTestBlock extends Component {
     }
 }
 
-export default TypingTestBlock;
+const mapStateToProps = (state) => {
+    return {
+        text: state.text,
+    }
+}
+
+const mapDispatchToProps = {
+    loadText
+}
+
+export default HOC()(connect(mapStateToProps, mapDispatchToProps)(TypingTestBlock));
+

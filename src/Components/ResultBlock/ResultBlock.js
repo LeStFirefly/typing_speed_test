@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Card, Button, CardTitle, CardText } from 'reactstrap';
+import { Card, Button, CardTitle} from 'reactstrap';
 
 import './ResultBlock.sass'
 
