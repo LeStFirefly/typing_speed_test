@@ -7,12 +7,14 @@ import './App.sass';
 
 function App() {
   return (
-    <div className="App container">
+    <div className="App">
       <StartModalBlock/>
-      <h1>Добро пожаловать!</h1>
-      <h2>Проверь свою скорость в тренажере слепой печати!</h2>
-      <TypingTestBlock/>
-      <ResultBlock/>
+      <div className="container">
+        <h1>Добро пожаловать!</h1>
+        <h2>Проверь свою скорость в тренажере слепой печати!</h2>
+        <TypingTestBlock/>
+        <ResultBlock/>
+      </div>
     </div>
   );
 }
