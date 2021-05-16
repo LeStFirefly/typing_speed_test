@@ -1,7 +1,7 @@
 export default class TypeService {
     async getText() {
-        //const _api = 'https://baconipsum.com/api/?type=all-meat&paras=1&start-with-lorem=1';
-        const _api = 'https://fish-text.ru/get?number=1';
+        //const _api = 'https://fish-text.ru/get?number=1'; //коротки текст
+        const _api = 'https://fish-text.ru/get?number=3';
 
         const result = await fetch(_api);
 

@@ -23,7 +23,7 @@ class ResultBlock extends Component {
                         <div className='results'>
                             <div className='result'>
                                 <span><i className="bi bi-clock-history"></i>Скорость</span>
-                                <span className='resultSpan'>{speed} зн./с</span>
+                                <span className='resultSpan'>{speed} зн./мин</span>
                             </div>
                             <div className='result'>
                                 <span><i className="bi bi-binoculars"></i>Точность</span>

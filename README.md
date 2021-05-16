@@ -4,4 +4,4 @@ For the testing project:
 3) Run the commsnd: npm install;
 4) Run the command: npm start;
 
-Or you just can test project on this hosting: ;
+Or you just can test project on this hosting: https://tst.lest-firefly.ru/;

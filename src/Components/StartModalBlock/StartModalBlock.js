@@ -4,6 +4,7 @@ import { startTest } from '../../actions';
 import { connect } from 'react-redux';
 import './StartModalBlock.sass'
 class StartModalBlock extends Component {
+    
     hideBlock = () => {
         document.querySelector('.modalWrapper').style.display = 'none';
         this.props.startTest();
