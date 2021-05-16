@@ -2,10 +2,7 @@ const initialState = {
     text: '',
     startTesting: false,
     speed: 0,
-    accuracy: 100,
-    startTime: 0,
-    actualTime: 0,
-    score: 0
+    accuracy: 100.0,
 }
 
 const reducer = (state = initialState, action) => {
@@ -20,14 +17,21 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 startTesting: true,
                 speed: 0,
-                accuracy: 0,
-                startTime: new Date()
+                accuracy: 100.0,
             };
         case 'RESTART_TEST':
             return {
                 ...state,
                 speed: 0,
-                accuracy: 0,
+                accuracy: 100.0,
+                startTesting: true
+            };
+        case 'SAVE_RESULT':
+            return {
+                ...state,
+                speed: action.speed,
+                accuracy: action.accuracy,
+                startTesting: false,
             };
         default:
             return state;

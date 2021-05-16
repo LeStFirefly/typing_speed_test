@@ -17,8 +17,17 @@ const restartTest = () => {
     }
 }
 
+const saveResult = (speed, accuracy) => {
+    return {
+        type: 'SAVE_RESULT',
+        speed,
+        accuracy
+    }
+}
+
 export {
     loadText,
     startTest,
-    restartTest
+    restartTest,
+    saveResult
 }
